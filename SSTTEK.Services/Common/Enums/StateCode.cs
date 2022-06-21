@@ -193,13 +193,13 @@ namespace ECommerce.Infrastructure.Common.Enums
         UserEmailUpdate = 20206,
         #endregion
 
-        #region PRODUCT
-        [StateDisplay(Code = 201, Name = "ProductCreated", Success = true)]
-        ProductCreated = 20303,
-        [StateDisplay(Code = 204, Name = "ProductDeleted", Success = true)]
-        ProductDeleted = 20304,
-        [StateDisplay(Code = 204, Name = "ProductUpdated", Success = true)]
-        ProductUpdated = 20305,
+        #region CONTACT
+        [StateDisplay(Code = 201, Name = "ContactCreated", Success = true)]
+        ContactCreated = 20303,
+        [StateDisplay(Code = 204, Name = "ContactDeleted", Success = true)]
+        ContactDeleted = 20304,
+        [StateDisplay(Code = 204, Name = "ContactUpdated", Success = true)]
+        ContactUpdated = 20305,
         #endregion
 
         #region LIST
@@ -274,9 +274,9 @@ namespace ECommerce.Infrastructure.Common.Enums
         UserNotChangedPassword = 40210,
         #endregion
 
-        #region PRODUCT
-        [StateDisplay(Code = 404, Name = "ProductNotFound", Success = false)]
-        ProductNotFound = 40300,
+        #region Contact
+        [StateDisplay(Code = 404, Name = "ContactNotFound", Success = false)]
+        ContactNotFound = 40300,
         #endregion
 
         #region LIST

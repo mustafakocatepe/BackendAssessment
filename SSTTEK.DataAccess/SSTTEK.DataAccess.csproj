@@ -5,9 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repositories\Abstract\**" />
+    <Compile Remove="Repositories\Concrete\**" />
+    <EmbeddedResource Remove="Repositories\Abstract\**" />
+    <EmbeddedResource Remove="Repositories\Concrete\**" />
+    <None Remove="Repositories\Abstract\**" />
+    <None Remove="Repositories\Concrete\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Context\" />
-    <Folder Include="Repositories\Abstract\" />
-    <Folder Include="Repositories\Concrete\" />
   </ItemGroup>
 
   <ItemGroup>

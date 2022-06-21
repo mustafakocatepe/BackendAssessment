@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SSTTEK.Services.Contacts.Commands.UpdateContact
 {
-    internal class UpdateContactCommandHandler : IRequestHandler<UpdateContactCommand, ResponseState>
+    public class UpdateContactCommandHandler : IRequestHandler<UpdateContactCommand, ResponseState>
     {
         private readonly IContactService _contactService;
         public UpdateContactCommandHandler(IContactService contactService)
