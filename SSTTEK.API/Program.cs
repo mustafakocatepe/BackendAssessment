@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SSSTTEK.API
+namespace SSTTEK.API
 {
     public class Program
     {

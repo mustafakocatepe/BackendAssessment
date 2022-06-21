@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ECommerce.Infrastructure.Common.Enums;
 using SSTTEK.DataAccess.Repositories.Abstract;
+using SSTTEK.DataAccess.Repositories.EntityFramework.Abstract;
 using SSTTEK.Entities.Concrete;
 using SSTTEK.Services.Common.Models;
 using SSTTEK.Services.Contacts.Commands;

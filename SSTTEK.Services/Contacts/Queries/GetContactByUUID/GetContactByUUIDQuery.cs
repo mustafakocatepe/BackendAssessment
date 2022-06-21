@@ -12,7 +12,5 @@ namespace SSTTEK.Services.Contacts.Queries.GetContactByUUID
         }
 
         public Guid UUID { get; }
-    }
-    {
-    }
+    }    
 }

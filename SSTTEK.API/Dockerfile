@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["SSSTTEK.API/SSSTTEK.API.csproj", "SSSTTEK.API/"]
-RUN dotnet restore "SSSTTEK.API/SSSTTEK.API.csproj"
+COPY ["SSTTEK.API/SSTTEK.API.csproj", "SSTTEK.API/"]
+RUN dotnet restore "SSTTEK.API/SSTTEK.API.csproj"
 COPY . .
-WORKDIR "/src/SSSTTEK.API"
-RUN dotnet build "SSSTTEK.API.csproj" -c Release -o /app/build
+WORKDIR "/src/SSTTEK.API"
+RUN dotnet build "SSTTEK.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "SSSTTEK.API.csproj" -c Release -o /app/publish
+RUN dotnet publish "SSTTEK.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "SSSTTEK.API.dll"]
+ENTRYPOINT ["dotnet", "SSTTEK.API.dll"]

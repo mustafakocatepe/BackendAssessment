@@ -1,4 +1,4 @@
-﻿using SSTTEK.DataAccess.Repositories.Abstract;
+﻿using SSTTEK.DataAccess.Repositories.EntityFramework.Abstract;
 using SSTTEK.Entities.Concrete;
 using System;
 using System.Collections.Generic;
