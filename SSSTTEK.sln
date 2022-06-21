@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSSTTEK.API", "SSSTTEK.API\SSSTTEK.API.csproj", "{7FDFB7AD-A30A-46A9-A890-2625E5AB63B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSTTEK.Services", "SSTTEK.Services\SSTTEK.Services.csproj", "{7E5B1E9B-F0CC-42C2-9B6E-D290BDCCCBDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSTTEK.DataAccess", "SSTTEK.DataAccess\SSTTEK.DataAccess.csproj", "{0ED4DDEA-967B-4E61-9770-BCB702E9D281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSTTEK.Entities", "SSTTEK.Entities\SSTTEK.Entities.csproj", "{833EEBC2-CA01-48B8-A72E-4AF7E46124EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0E0478C2-058B-4CB2-B6FB-418A114F18F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSTTEK.Services.UnitTests", "SSTTEK.Services.UnitTests\SSTTEK.Services.UnitTests.csproj", "{DB71F9A0-7A28-4EF3-B27B-475364E579DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FDFB7AD-A30A-46A9-A890-2625E5AB63B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDFB7AD-A30A-46A9-A890-2625E5AB63B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDFB7AD-A30A-46A9-A890-2625E5AB63B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FDFB7AD-A30A-46A9-A890-2625E5AB63B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5B1E9B-F0CC-42C2-9B6E-D290BDCCCBDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E5B1E9B-F0CC-42C2-9B6E-D290BDCCCBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E5B1E9B-F0CC-42C2-9B6E-D290BDCCCBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E5B1E9B-F0CC-42C2-9B6E-D290BDCCCBDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED4DDEA-967B-4E61-9770-BCB702E9D281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED4DDEA-967B-4E61-9770-BCB702E9D281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED4DDEA-967B-4E61-9770-BCB702E9D281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED4DDEA-967B-4E61-9770-BCB702E9D281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{833EEBC2-CA01-48B8-A72E-4AF7E46124EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{833EEBC2-CA01-48B8-A72E-4AF7E46124EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{833EEBC2-CA01-48B8-A72E-4AF7E46124EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{833EEBC2-CA01-48B8-A72E-4AF7E46124EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB71F9A0-7A28-4EF3-B27B-475364E579DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB71F9A0-7A28-4EF3-B27B-475364E579DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB71F9A0-7A28-4EF3-B27B-475364E579DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB71F9A0-7A28-4EF3-B27B-475364E579DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB71F9A0-7A28-4EF3-B27B-475364E579DB} = {0E0478C2-058B-4CB2-B6FB-418A114F18F9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B5B7AF5-0B0E-42A2-A0D9-4C2AEE185920}
+	EndGlobalSection
+EndGlobal
