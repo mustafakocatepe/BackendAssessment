@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace SSTTEK.DataAccess.Repositories.EntityFramework.Abstract
 {
-    public interface IContactRepository : IRepository<Contact>
+    public interface IContactWriteRepository : IWriteRepository<Contact>
     {
+        bool Remove(Guid UUID);
+
     }
 }

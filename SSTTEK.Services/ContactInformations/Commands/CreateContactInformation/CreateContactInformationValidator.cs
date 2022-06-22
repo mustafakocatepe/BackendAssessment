@@ -11,10 +11,9 @@ namespace SSTTEK.Services.ContactInformations.Commands.CreateContactInformation
     {
         public CreateContactInformationValidator()
         {
-            RuleFor(x => x.ContactInformation.PhoneNumber).NotEmpty().WithMessage("Bu alan boş olamaz.");
-            RuleFor(x => x.ContactInformation.EmailAddress).NotEmpty().WithMessage("Bu alan boş olamaz.");
-            RuleFor(x => x.ContactInformation.Location).NotEmpty().WithMessage("Bu alan boş olamaz.");
-
+            RuleFor(x => x.UUID).NotEmpty().WithMessage("Bu alan boş olamaz.");
+            RuleFor(x => x.ContactInformation.InformationType).NotEmpty().WithMessage("Bu alan boş olamaz.");           
+            RuleFor(x => x.ContactInformation.ContactInformation).NotEmpty().WithMessage("Bu alan boş olamaz.");
         }
     }
 }

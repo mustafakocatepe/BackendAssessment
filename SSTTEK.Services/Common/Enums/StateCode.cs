@@ -203,12 +203,12 @@ namespace ECommerce.Infrastructure.Common.Enums
         #endregion
 
         #region LIST
-        [StateDisplay(Code = 201, Name = "ListCreated", Success = true)]
-        ListCreated = 20403,
-        [StateDisplay(Code = 204, Name = "ListDeleted", Success = true)]
-        ListDeleted = 20404,
-        [StateDisplay(Code = 204, Name = "ListUpdated", Success = true)]
-        ListUpdated = 20405,
+        [StateDisplay(Code = 201, Name = "ContactInformationCreated", Success = true)]
+        ContactInformationCreated = 20403,
+        [StateDisplay(Code = 204, Name = "ContactInformationDeleted", Success = true)]
+        ContactInformationDeleted = 20404,
+        [StateDisplay(Code = 204, Name = "ContactInformationUpdated", Success = true)]
+        ContactInformationUpdated = 20405,
         #endregion
 
 
@@ -279,7 +279,7 @@ namespace ECommerce.Infrastructure.Common.Enums
         ContactNotFound = 40300,
         #endregion
 
-        #region LIST
+        #region ContactInformation
         [StateDisplay(Code = 404, Name = "ListNotFound", Success = false)]
         ListNotFound = 40300,
         #endregion

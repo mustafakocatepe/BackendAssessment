@@ -2,6 +2,7 @@
 using ECommerce.Infrastructure.Common.Enums;
 using ECommerce.Infrastructure.Common.Exceptions;
 using SSTTEK.DataAccess.Repositories.EntityFramework.Abstract;
+using SSTTEK.DataAccess.Repositories.EntityFramework.Read.Abstract;
 using SSTTEK.Entities.Concrete;
 using SSTTEK.Services.Common.Models;
 using SSTTEK.Services.Contacts.Commands;
@@ -19,14 +20,16 @@ namespace SSTTEK.Services.Contacts.Services.Concrete
 {
     public class ContactService : IContactService
     {
-        private readonly IContactRepository _contactRepository;
+        private readonly IContactWriteRepository _contactWriteRepository;
+        private readonly IContactReadRepository _contactReadRepository;
         private readonly IRedisCacheService _redisCacheService;
         private readonly IMapper _mapper;
         private const string ContactDetail = "Contact:{0}";
 
-        public ContactService(IContactRepository contactRepository, IRedisCacheService redisCacheService, IMapper mapper)
+        public ContactService(IContactWriteRepository contactWriteRepository, IContactReadRepository contactReadRepository, IRedisCacheService redisCacheService, IMapper mapper)
         {
-            _contactRepository = contactRepository;
+            _contactWriteRepository = contactWriteRepository;
+            _contactReadRepository = contactReadRepository;
             _mapper = mapper;
             _redisCacheService= redisCacheService;
         }
@@ -34,18 +37,13 @@ namespace SSTTEK.Services.Contacts.Services.Concrete
         #region Common
         public async Task<Contact> DetailAsync(Guid UUID)
         {
-            var product = await _contactRepository.FirstOrDefaultAsync(x => x.UUID == UUID && x.IsActive);
+            var contact = await _contactReadRepository.FirstOrDefaultAsync(x => x.UUID == UUID && !x.IsDelete);
 
-            if (product == null)
-            {
+            if (contact == null)            
                 throw new StateException { StateCode = StateCode.ContactNotFound };
-            }
-            else if (!product.IsActive)
-            {
-                throw new StateException { StateCode = StateCode.ContactNotFound };
-            }
+          
 
-            return product;
+            return contact;
         }
         #endregion
 
@@ -53,16 +51,15 @@ namespace SSTTEK.Services.Contacts.Services.Concrete
         public async Task<ResponseState> CreateAsync(CreateContactCommand request)
         {
             var contact = _mapper.Map<Contact>(request);
-            await _contactRepository.AddAsync(contact);
+            await _contactWriteRepository.AddAsync(contact);
             return new ResponseState(StateCode.ContactCreated);
         }
 
         public async Task<ResponseState> DeleteAsync(Guid UUID)
         {
-            var product = await DetailAsync(UUID);
-            _contactRepository.Remove(product.UUID);
+            var contact = await DetailAsync(UUID);
+            _contactWriteRepository.Remove(contact.UUID);
             return new ResponseState(StateCode.ContactDeleted);
-
         }
 
         public async Task<ResponseState> UpdateAsync(UpdateContactCommand request)
@@ -77,13 +74,10 @@ namespace SSTTEK.Services.Contacts.Services.Concrete
                 contact.Firm = request.Contact.Firm;
 
 
-            await _contactRepository.Update(contact);
+            await _contactWriteRepository.Update(contact);
             return new ResponseState(StateCode.ContactUpdated);
         }
         #endregion
-
-
-
 
         #region Queries
         public async Task<ResponseState<ContactDto>> GetByIdAsync(Guid UUID)
@@ -100,7 +94,7 @@ namespace SSTTEK.Services.Contacts.Services.Concrete
 
         public async Task<ResponseState<List<ContactDto>>> GetAllAsync()
         {
-            var contactList = await _contactRepository.WhereAsync(x => x.IsActive);
+            var contactList = await _contactReadRepository.WhereAsync(x => !x.IsDelete);
 
             var response = _mapper.Map<List<Contact>, List<ContactDto>>(contactList.ToList());
 
